@@ -1,4 +1,4 @@
-![Snowplace Logo](img/snowplace_full.svg)
+![Snowplace Logo](img/snowplace_logo.svg)
 
 # Snowplace
 
