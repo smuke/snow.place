@@ -1,4 +1,8 @@
-![Snowplace Logo](snowplace_logo.svg)
+<div align="center">
+    <a href="https://snow.place">
+        <img src="snowplace_logo.svg" alt="Snowplace Logo" width="600px" />
+    </a>
+</div>
 
 # Snowplace
 
