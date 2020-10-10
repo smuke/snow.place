@@ -52,9 +52,12 @@ h1 {
     font-weight: normal;
 }
 
+header a {
+    margin-left: 10px;
+}
+
 header i {
     color: var(--gray);
-    margin-left: 10px;
     transition: .3s;
 }
 
