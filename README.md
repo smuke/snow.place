@@ -20,7 +20,11 @@ With Discord IDs, you can get the exact creation date of a message out of a snow
 ``User Settings > Appearance > Developer Mode``
 - Get the ID of a message 
 ```Right Click message > Copy ID```
-
+## Planned Features
+ - Add unlimited snowflakes to compare
+ - Support for twitter
+ - Shareable links
+ - Name Snowflakes to produce stunning visuals/screenshots 
 ## Creators
 
 - [@Smuke](https://github.com/Smuke)
