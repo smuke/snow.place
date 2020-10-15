@@ -6,7 +6,7 @@
 
 # Snowplace
 
-With Discord IDs, you can get the exact creation date of a message out of a snowflake. Snowplace makes it easy to compare Discord snowflakes.
+With Message IDs, you can get the exact creation date of a message out of a snowflake. Snowplace makes it easy to compare Message snowflakes. It supports Discord, Twitter, and even Hiven.
 
 ## Links
 
@@ -23,7 +23,6 @@ With Discord IDs, you can get the exact creation date of a message out of a snow
 ## Planned Features
 
 - Add unlimited snowflakes to compare
-- Support for twitter
 - Shareable links
 - Name Snowflakes to produce stunning visuals/screenshots
 
