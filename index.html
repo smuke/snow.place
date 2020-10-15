@@ -1,70 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Compare Discord Snowflake Timestamps | Snowplace</title>
-    <meta name="title" content="Compare Discord Snowflake Timestamps | Snowplace">
-    <meta name="description" content="Snowplace makes it easy to compare Discord snowflakes.">
-    <meta name="theme-color" content="#48DFF3">
+    <meta
+      name="title"
+      content="Compare Discord Snowflake Timestamps | Snowplace"
+    />
+    <meta
+      name="description"
+      content="Snowplace makes it easy to compare Discord snowflakes."
+    />
+    <meta name="theme-color" content="#48DFF3" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://snow.place/">
-    <meta property="og:title" content="Snowplace | Compare Discord Snowflake Timestamps">
-    <meta property="og:description" content="With Discord IDs, you can get the exact creation date of a message out of a snowflake. Snowplace makes it easy to compare Discord snowflakes.">
-    <meta property="og:image" content="https://cdn.glitch.com/0967da06-2ba6-4b43-b2a6-d4912fa3e754%2Ffavicon.png?v=1601671267280">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://snow.place/" />
+    <meta
+      property="og:title"
+      content="Snowplace | Compare Discord Snowflake Timestamps"
+    />
+    <meta
+      property="og:description"
+      content="With Discord IDs, you can get the exact creation date of a message out of a snowflake. Snowplace makes it easy to compare Discord snowflakes."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/0967da06-2ba6-4b43-b2a6-d4912fa3e754%2Ffavicon.png?v=1601671267280"
+    />
 
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-
-</head>
-<body>
+    <link rel="stylesheet" href="normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+      integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="shortcut icon" href="favicon.png" type="image/x-icon"> -->
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/0967da06-2ba6-4b43-b2a6-d4912fa3e754%2Ffavicon.png?v=1601671267280"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <header>
-        <img src="snowplace_logo.svg" alt="Snowplace">
-        <span><h1>Compare Discord snowflake timestamps</h1><a href="https://github.com/Smuke/Snowplace#readme" target="_blank"><i class="far fa-question-circle"></i></a></span>
+      <!-- <img src="snowplace_logo.svg" alt="Snowplace"> -->
+      <img
+        src="https://cdn.glitch.com/0967da06-2ba6-4b43-b2a6-d4912fa3e754%2Fsnowplace_logo.svg?v=1601516099655"
+        alt="Snowplace"
+      />
+      <span
+        ><h1>
+          Compare message snowflake timestamps for Discord, Twitter, and Hiven
+        </h1>
+        <i class="far fa-question-circle"></i
+      ></span>
     </header>
+    <div class="toggler">
+      <button class = "toggleservice" id = "discord" onclick="changeservice('discord')">
+        Discord
+      </button>
+
+      <button class = "toggleservice" id = "twitter" onclick="changeservice('twitter')">
+        Twitter
+      </button>
+      <button class = "toggleservice" id = "hiven" onclick="changeservice('hiven')">
+        Hiven
+      </button>
+    </div>
     <div class="container">
-        <form action="" class="message-1">
-            <div class="ripple-line"></div>
-            <div class="input">
-                <label>1</label>
-                <input id="input-1" type="text" placeholder="Message ID">
-                <div class="trophy">
-                    <small>0</small>
-                    <i class="fas fa-trophy"></i>
-                </div>
-            </div>
-        </form>
-        <div class="result">
-            <small>Your Local Time</small>
-            <p>01/01/2001 01:01:01 AM</p>
-            <small>Coordinated Universal Time</small>
-            <p>01/01/2001 01:01:01 AM</p>
-            <small>Unix Time</small>
-            <p>0000000000</p>
+      <form action="" class="message-1">
+        <div class="ripple-line"></div>
+        <div class="input">
+          <label>1</label>
+          <input id="input-1" type="text" placeholder="Message ID" />
+          <div class="trophy">
+            <small>0</small>
+            <i class="fas fa-trophy"></i>
+          </div>
         </div>
-        <form action="" class="message-2">
-            <div class="ripple-line"></div>
-            <div class="input">
-                <label>2</label>
-                <input id="input-2" type="text" placeholder="Message ID">
-                <div class="trophy">
-                    <small>0</small>
-                    <i class="fas fa-trophy"></i>
-                </div>
-            </div>
-        </form>
-        <div class="result">
-            <small>Your Local Time</small>
-            <p>01/01/2001 01:01:01 AM</p>
-            <small>Coordinated Universal Time</small>
-            <p>01/01/2001 01:01:01 AM</p>
-            <small>Unix Time</small>
-            <p>0000000000</p>
+      </form>
+      <div class="result">
+        <small>Your Local Time</small>
+        <p>01/01/2001 01:01:01 AM</p>
+        <small>Coordinated Universal Time</small>
+        <p>01/01/2001 01:01:01 AM</p>
+        <small>Unix Time</small>
+        <p>0000000000</p>
+      </div>
+      <form action="" class="message-2">
+        <div class="ripple-line"></div>
+        <div class="input">
+          <label>2</label>
+          <input id="input-2" type="text" placeholder="Message ID" />
+          <div class="trophy">
+            <small>0</small>
+            <i class="fas fa-trophy"></i>
+          </div>
         </div>
+      </form>
+      <div class="result">
+        <small>Your Local Time</small>
+        <p>01/01/2001 01:01:01 AM</p>
+        <small>Coordinated Universal Time</small>
+        <p>01/01/2001 01:01:01 AM</p>
+        <small>Unix Time</small>
+        <p>0000000000</p>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
