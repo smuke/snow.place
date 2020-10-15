@@ -1,6 +1,6 @@
 <div align="center">
     <a href="https://snow.place">
-        <img src="snowplace_logo.svg" alt="Snowplace Logo" width="600px" />
+        <img src="https://cdn.glitch.com/0967da06-2ba6-4b43-b2a6-d4912fa3e754%2Fsnowplace_logo.svg?v=1602736428469" alt="Snowplace Logo" width="600px" />
     </a>
 </div>
 
