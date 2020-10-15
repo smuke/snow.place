@@ -1,3 +1,36 @@
+//default is discord
+let serviceepoch = 1420070400000
+document.getElementById("discord").style.borderBottom = "3px solid var(--blue)"
+function changeservice(servicename){
+  console.log("changing to "+servicename)
+  switch (servicename){
+      case 'discord':
+        serviceepoch = 1420070400000
+        document.getElementById("discord").style.borderBottom = "3px solid var(--blue)"
+        document.getElementById("twitter").style.borderBottom = "1px solid var(--darkGray)"
+        document.getElementById("hiven").style.borderBottom = "1px solid var(--darkGray)"
+
+        break;
+      case 'hiven':
+        serviceepoch = 1562544000000
+        document.getElementById("hiven").style.borderBottom = "3px solid var(--blue)"
+        document.getElementById("twitter").style.borderBottom = "1px solid var(--darkGray)"
+        document.getElementById("discord").style.borderBottom = "1px solid var(--darkGray)"
+        break;
+      case 'twitter':
+        serviceepoch = 1288834974657
+        document.getElementById("twitter").style.borderBottom = "3px solid var(--blue)"
+        document.getElementById("discord").style.borderBottom = "1px solid var(--darkGray)"
+        document.getElementById("hiven").style.borderBottom = "1px solid var(--darkGray)"
+        break;
+  }
+var event = new Event('input');
+inputOne.dispatchEvent(event);
+  inputTwo.dispatchEvent(event);
+
+    console.log(serviceepoch)
+}
+
 // form bottom border color
 let inputOne = document.querySelectorAll("form input")[0];
 let inputTwo = document.querySelectorAll("form input")[1];
@@ -137,7 +170,7 @@ inputTwo.addEventListener("input", function(e) {
 function getDate(id) {
   const idint = BigInt.asUintN(64, id);
   const binarydate = Number(idint >> 22n);
-  return new Date(binarydate + 1420070400000);
+  return new Date(binarydate + serviceepoch);
 }
 function makePretty(date) {
   return (
