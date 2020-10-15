@@ -25,7 +25,7 @@ With Message IDs, you can get the exact creation date of a message out of a snow
 - Add unlimited snowflakes to compare
 - Shareable links
 - Name Snowflakes to produce stunning visuals/screenshots
-
+- Save data in local storage so it's persistent when you reload and saves your last comparison
 ## Creators
 
 - [@Smuke](https://github.com/Smuke)
