@@ -16,8 +16,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 60px 0;
-      zoom: .8;
-    -moz-transform: scale(.8);
+      zoom: .85;
+    -moz-transform: scale(.85);
     -moz-transform-origin: 0 0;
 }
 .toggleservice {
