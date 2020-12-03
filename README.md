@@ -28,5 +28,5 @@ With Message IDs, you can get the exact creation date of a message out of a snow
 - Save data in local storage so it's persistent when you reload and saves your last comparison
 ## Creators
 
-- [@Smuke](https://github.com/Smuke)
+- [@smuke](https://github.com/smuke)
 - [@Carcraftz](https://github.com/Carcraftz)
