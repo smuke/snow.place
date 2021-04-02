@@ -1,27 +1,27 @@
 //default is discord
 let serviceepoch = 1420070400000
-document.getElementById("discord").style.borderBottom = "3px solid var(--blue)"
+document.getElementById("discord").classList.add("selected");
 function changeservice(servicename){
   console.log("changing to "+servicename)
   switch (servicename){
       case 'discord':
-        serviceepoch = 1420070400000
-        document.getElementById("discord").style.borderBottom = "3px solid var(--blue)"
-        document.getElementById("twitter").style.borderBottom = "1px solid var(--darkGray)"
-        document.getElementById("hiven").style.borderBottom = "1px solid var(--darkGray)"
+        serviceepoch = 1420070400000;
+        document.getElementById("discord").classList.add("selected");
+        document.getElementById("twitter").classList.remove("selected");
+        document.getElementById("hiven").classList.remove("selected");
 
         break;
       case 'hiven':
-        serviceepoch = 1562544000000
-        document.getElementById("hiven").style.borderBottom = "3px solid var(--blue)"
-        document.getElementById("twitter").style.borderBottom = "1px solid var(--darkGray)"
-        document.getElementById("discord").style.borderBottom = "1px solid var(--darkGray)"
+        serviceepoch = 1562544000000;
+        document.getElementById("hiven").classList.add("selected");
+        document.getElementById("twitter").classList.remove("selected");
+        document.getElementById("discord").classList.remove("selected");
         break;
       case 'twitter':
-        serviceepoch = 1288834974657
-        document.getElementById("twitter").style.borderBottom = "3px solid var(--blue)"
-        document.getElementById("discord").style.borderBottom = "1px solid var(--darkGray)"
-        document.getElementById("hiven").style.borderBottom = "1px solid var(--darkGray)"
+        serviceepoch = 1288834974657;
+        document.getElementById("twitter").classList.add("selected");
+        document.getElementById("discord").classList.remove("selected");
+        document.getElementById("hiven").classList.remove("selected");
         break;
   }
 var event = new Event('input');
