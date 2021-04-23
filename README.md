@@ -20,12 +20,19 @@ With Message IDs, you can get the exact creation date of a message out of a snow
 - Get the ID of a message
   `Right Click message > Copy ID`
 
+## Discord Bot
+
+Snowplace is now available within a Discord bot!
+- [Invite Bot](https://discord.com/oauth2/authorize?client_id=834658971896774686&scope=bot&permissions=363520)
+- [GitHub Repository](https://github.com/smuke/snowplace-bot)
+
 ## Planned Features
 
 - Add unlimited snowflakes to compare
 - Shareable links
 - Name Snowflakes to produce stunning visuals/screenshots
 - Save data in local storage so it's persistent when you reload and saves your last comparison
+
 ## Creators
 
 - [@smuke](https://github.com/smuke)
