@@ -83,6 +83,19 @@ header i:hover {
     cursor: pointer;
 }
 
+.announcement {
+    color: var(--gray);
+    border-bottom: 1px solid var(--gray);
+    display: inline-block;
+    padding-bottom: 4px;
+    transition: .5s ease;
+}
+
+.announcement:hover {
+    color: var(--white);
+    border-bottom: 1px solid var(--white);
+}
+
 /* Forms */
 
 form {
