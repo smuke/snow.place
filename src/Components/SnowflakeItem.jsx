@@ -7,17 +7,19 @@ import Time from "./Time";
 const Div = styled.div`
     background: #10131D;
     border: 1px solid #2F3648;
-    padding: 20px;
+    padding: 0 20px;
     margin-bottom: 10px;
     box-sizing: border-box;
     min-height: 10px;
     border-radius: 5px;
-    transition: .5s ease-out;
+    transition: min-height .5s ease-out;
+    input {
+        padding: 20px 0;
+        margin: 0;
+    }
     &.expanded {
+        padding: 0 20px 20px 20px;
         min-height: 100px;
-        input {
-            margin-bottom: 10px;
-        }
     }
     .expanded {
         color: red;

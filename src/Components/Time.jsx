@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Paragraph = styled.p`
     font: 1rem "Inter", sans-serif;
     color: #ABC4FF;
-    margin: 10px 0 0 0;
+    margin: 0;
+    line-height: 1.5;
 `;
 
 const Timezone = styled.span`
