@@ -15,9 +15,12 @@ const Div = styled.div`
     transition: .5s ease-out;
     &.expanded {
         min-height: 100px;
+        input {
+            margin-bottom: 10px;
+        }
     }
-    input {
-        margin-bottom: 10px;
+    .expanded {
+        color: red;
     }
 `;
 
@@ -53,10 +56,12 @@ export default function SnowflakeItem(props) {
                 <Time
                     time="5/26/2021 7:58:20"
                     timezone="PST"
+                    display={expanded && true}
                 />
                 <Time
                     time="5/26/2021 10:58:20"
                     timezone="UTC"
+                    display={expanded && true}
                 />
             </form>
         </Div>

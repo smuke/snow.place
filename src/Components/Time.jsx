@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Paragraph = styled.p`
     font: 1rem "Inter", sans-serif;
-    color: white;
+    color: #ABC4FF;
     margin: 10px 0 0 0;
 `;
 
@@ -14,7 +14,7 @@ const Timezone = styled.span`
 
 export default function Time(props) {
     return (
-        <Paragraph>
+        <Paragraph style={{ display: props.display ? "block" : "none" }}>
             {props.time}
             <Timezone>{props.timezone}</Timezone>
         </Paragraph>
