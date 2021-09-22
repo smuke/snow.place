@@ -21,9 +21,6 @@ const Div = styled.div`
         padding: 0 20px 20px 20px;
         min-height: 100px;
     }
-    .expanded {
-        color: red;
-    }
 `;
 
 export default function SnowflakeItem(props) {

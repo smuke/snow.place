@@ -5,6 +5,18 @@ const Paragraph = styled.p`
     color: #ABC4FF;
     margin: 0;
     line-height: 1.5;
+    animation: fade-in-top 0.25s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    @keyframes fade-in-top {
+        0% {
+            transform: translateY(-5px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
 `;
 
 const Timezone = styled.span`
