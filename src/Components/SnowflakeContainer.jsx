@@ -5,7 +5,7 @@ import AddSnowflakeItem from "./AddSnowflakeItem";
 import { useState } from "react";
 
 const Div = styled.div`
-    margin-top: 200px;
+    margin-top: 100px;
 `;
 
 export default function SnowflakeContainer() {
@@ -27,7 +27,7 @@ export default function SnowflakeContainer() {
     return (
         <Div>
             {items.map((item, index) => {
-                return <SnowflakeItem key={index} />;
+                return <SnowflakeItem key={index} id={index} />;
             })}
             <AddSnowflakeItem onClick={addSnowflake}>+ Add</AddSnowflakeItem>
         </Div>
