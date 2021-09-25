@@ -64,6 +64,8 @@ export default function SnowflakeItem(props) {
                     onPaste={handlePaste}
                     onChange={handleChange}
                     value={inputText}
+                    type="number"
+                    autoComplete="off"
                 />
                 <Time
                     time="5/26/2021 7:58:20"
