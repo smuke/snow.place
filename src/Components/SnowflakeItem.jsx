@@ -16,6 +16,11 @@ const Div = styled.div`
     input {
         padding: 20px 0;
         margin: 0;
+        -moz-appearance: textfield;
+    }
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
     &.expanded {
         padding: 0 20px 20px 20px;
