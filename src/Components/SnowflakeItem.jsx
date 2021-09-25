@@ -43,12 +43,25 @@ export default function SnowflakeItem(props) {
         }
     }
 
+    function handlePaste(e) {
+        const value = e.clipboardData.getData('Text');
+        
+        handleChange({target: { value }});
+        e.target.blur();
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
+
     return (
         <Div className={expanded && "expanded"}>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <Input
+                    id={props.id}
                     type="text"
                     placeholder="Message ID"
+                    onPaste={handlePaste}
                     onChange={handleChange}
                     value={inputText}
                 />
