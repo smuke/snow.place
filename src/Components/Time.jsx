@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Paragraph = styled.p`
-    font: 1rem "Inter", sans-serif;
+    font: 1.1rem "Inter", sans-serif;
     color: #ABC4FF;
     margin: 0;
     line-height: 1.5;
@@ -20,9 +20,9 @@ const Paragraph = styled.p`
 `;
 
 const Timezone = styled.span`
-    font: 1rem "Inter", sans-serif;
+    font: 1.1rem "Inter", sans-serif;
     color: #778096;
-    margin-left: 5px;
+    margin-left: 10px;
 `;
 
 export default function Time(props) {

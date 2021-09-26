@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const AddSnowflakeItem = styled.button`
     color: #778096;
-    font: 1rem "Inter", sans-serif;
+    font: 1.1rem "Inter", sans-serif;
     background: #10131D;
     border: 1px solid #2F3648;
     padding: 20px;

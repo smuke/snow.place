@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default styled.input`
     color: white;
-    font: 1rem "Inter", sans-serif;
+    font: 1.1rem "Inter", sans-serif;
     padding: 0;
     border: none;
     background: none;
