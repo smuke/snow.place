@@ -11,25 +11,20 @@ const Div = styled.div`
 export default function SnowflakeContainer() {
     const [items, setItems] = useState([
         {
-            value: ""
+            difference: "n/a",
+            fastest: true
         },
         {
-            value: ""
+            difference: "n/a"
         }
     ])
-
-    function addSnowflake() {
-        setItems((prevItems) => {
-            return [...prevItems, { value: "" }];
-        });
-    }
 
     return (
         <Div>
             {items.map((item, index) => {
-                return <SnowflakeItem key={index} id={index} />;
+                return <SnowflakeItem key={index} id={index} difference={item.difference} fastest={item.fastest && true}/>;
             })}
-            <AddSnowflakeItem onClick={addSnowflake}>+ Add</AddSnowflakeItem>
+            <AddSnowflakeItem>+ Add</AddSnowflakeItem>
         </Div>
     );
 }

@@ -6,9 +6,10 @@ export default styled.input`
     padding: 0;
     border: none;
     background: none;
-    width: 100%;
+    width: 50%;
     outline: none;
     box-shadow: none;
+    text-overflow: ellipsis;
     ::placeholder {
         color: #778096;
     }

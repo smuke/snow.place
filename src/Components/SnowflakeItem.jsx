@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 import Input from "./Input";
 import Time from "./Time";
-import Calculate from "../calculate";
+import Calculate, { checkFastest } from "../calculate";
+import Difference from "./Difference";
 
 const Div = styled.div`
     background: #10131D;
@@ -30,6 +31,12 @@ const Div = styled.div`
             padding: 20px 0 15px 0;
         }
     }
+`;
+
+const Top = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 export default function SnowflakeItem(props) {
@@ -86,15 +93,21 @@ export default function SnowflakeItem(props) {
     return (
         <Div className={expanded && "expanded"}>
             <form onSubmit={handleSubmit}>
-                <Input
-                    id={props.id}
-                    placeholder="Message ID"
-                    onPaste={handlePaste}
-                    onChange={handleChange}
-                    value={inputText}
-                    type="number"
-                    autoComplete="off"
-                />
+                <Top>
+                    <Input
+                        id={props.id}
+                        placeholder="Message ID"
+                        onPaste={handlePaste}
+                        onChange={handleChange}
+                        value={inputText}
+                        type="number"
+                        autoComplete="off"
+                    />
+                    {expanded && <Difference 
+                        value={props.difference}
+                        fastest={props.fastest && true}
+                    />}
+                </Top>
                 <Time
                     time={time.local.timestamp}
                     timezone={time.local.type}
