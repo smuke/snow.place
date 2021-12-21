@@ -11,11 +11,14 @@ const Div = styled.div`
 export default function SnowflakeContainer() {
     const [items, setItems] = useState([
         {
-            difference: "n/a",
+            difference: "Error",
             fastest: true
         },
         {
-            difference: "n/a"
+            difference: "Error"
+        },
+        {
+            difference: "Error"
         }
     ])
 
