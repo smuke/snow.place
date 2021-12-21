@@ -22,12 +22,25 @@ export default function SnowflakeContainer() {
         }
     ])
 
+    function addItem(e) {
+        e.preventDefault();
+
+        setItems(prevItems => {
+            return [
+                ...prevItems,
+                {
+                    difference: "Error"
+                }
+            ]
+        });
+    }
+
     return (
         <Div>
             {items.map((item, index) => {
-                return <SnowflakeItem key={index} id={index} difference={item.difference} fastest={item.fastest && true}/>;
+                return <SnowflakeItem key={index} id={index} difference={item.difference} fastest={item.fastest && true} />;
             })}
-            <AddSnowflakeItem>+ Add</AddSnowflakeItem>
+            <AddSnowflakeItem onClick={addItem}>+ Add</AddSnowflakeItem>
         </Div>
     );
 }
