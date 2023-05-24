@@ -1,13 +1,11 @@
 import "./styles.css";
-import SnowflakeItem from "./components/SnowflakeItem";
+import SnowflakeContainer from "./components/SnowflakesContainer";
 
 function App() {
     return (
         <>
-            <h1>Vite + React</h1>
-            <form>
-                <SnowflakeItem />
-            </form>
+            <h1>Snow.place</h1>
+            <SnowflakeContainer />
         </>
     );
 }
