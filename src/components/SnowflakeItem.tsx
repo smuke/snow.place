@@ -11,10 +11,10 @@ const Container = styled.section`
     border: 1px solid #2e313c;
     border-radius: 5px;
     position: relative;
-    transition: .1s;
+    transition: 0.1s;
     input {
         background: none;
-        color: #8B94BB;
+        color: #8b94bb;
         padding: 20px 0;
         margin: 0;
         width: 100%;
@@ -22,11 +22,15 @@ const Container = styled.section`
         outline: none;
         font: 500 1rem "Inter", sans-serif;
         &::placeholder {
-            color: #8B94BB;
+            color: #8b94bb;
             font: 500 1rem "Inter", sans-serif;
         }
         &:focus::placeholder {
             color: transparent;
+        }
+        &::selection {
+            background: #8b94bb;
+            color: #1e2028;
         }
     }
     &:before {
@@ -40,11 +44,11 @@ const Container = styled.section`
         top: 15px;
         left: -2px;
         transform: translateX(0);
-        transition: .25s ease;
+        transition: 0.25s ease;
     }
     &:focus-within {
         &:before {
-            background: #8B94BB;
+            background: #8b94bb;
             transform: translateX(2px);
         }
     }
