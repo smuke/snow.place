@@ -1,4 +1,4 @@
-import { useState, SyntheticEvent } from "react";
+import { useState, SyntheticEvent, FocusEvent } from "react";
 import styled from "styled-components";
 
 import Time from "./Time";
@@ -84,22 +84,28 @@ function SnowflakeItem() {
     function handleChange(e: SyntheticEvent<HTMLInputElement>) {
         e.preventDefault();
 
-        setSnowflake(e.currentTarget.value);
-        if (e.currentTarget.value.length > 5) {
-            setExpanded(true);
-        }
-        else {
-            setExpanded(false);
+        const targetValue: string = e.currentTarget.value;
+
+        // Only allow numbers or empty input
+        if (targetValue.match(/^([0-9])+$/) || targetValue === "") {
+            setSnowflake(targetValue);
+
+            // Show output if input is longer than 5 characters
+            if (targetValue.length > 5) {
+                setExpanded(true);
+            } else {
+                setExpanded(false);
+            }
         }
     }
 
     // Select all "text" when input focused for easier pasting
-    function handleFocus(e: any) {
+    function handleFocus(e: FocusEvent<HTMLInputElement>) {
         e.currentTarget.select();
     }
 
     return (
-        <Container className={expanded ? "expanded": ""}>
+        <Container className={expanded ? "expanded" : ""}>
             <Top>
                 <input
                     type="text"
@@ -116,7 +122,7 @@ function SnowflakeItem() {
                 <Time time="5/26/2021 10:58:20" timezone="EST" />
             </output>
         </Container>
-    )
+    );
 }
 
 export default SnowflakeItem;
