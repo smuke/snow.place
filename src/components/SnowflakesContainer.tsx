@@ -4,6 +4,7 @@ function SnowflakesContainer() {
     return (
         <form onSubmit={e => e.preventDefault()}>
             <SnowflakeItem />
+            <SnowflakeItem />
         </form>
     )
 }
