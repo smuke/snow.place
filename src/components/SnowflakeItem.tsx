@@ -72,12 +72,14 @@ const Container = styled.section`
 const Top = styled.div`
     display: flex;
 `;
+
 function SnowflakeItem() {
     const [snowflake, setSnowflake] = useState("");
     const [expanded, setExpanded] = useState(false);
 
     function handleChange(e: SyntheticEvent<HTMLInputElement>) {
         e.preventDefault();
+
         setSnowflake(e.currentTarget.value);
         if (e.currentTarget.value.length > 5) {
             setExpanded(true);
@@ -85,6 +87,11 @@ function SnowflakeItem() {
         else {
             setExpanded(false);
         }
+    }
+
+    // Select all "text" when input focused for easier pasting
+    function handleFocus(e: any) {
+        e.currentTarget.select();
     }
 
     return (
@@ -96,6 +103,7 @@ function SnowflakeItem() {
                     autoComplete="off"
                     value={snowflake}
                     onChange={handleChange}
+                    onFocus={handleFocus}
                 />
                 <p className="comparison">-1293</p>
             </Top>
