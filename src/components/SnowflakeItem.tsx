@@ -17,10 +17,16 @@ const Container = styled.section`
         color: #8b94bb;
         padding: 20px 0;
         margin: 0;
-        width: 100%;
+        width: auto;
         border: none;
         outline: none;
         font: 500 1rem "Inter", sans-serif;
+        display: flex;
+        flex-grow: 1;
+        // Ellipsis
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         &::placeholder {
             color: #8b94bb;
             font: 500 1rem "Inter", sans-serif;
@@ -75,6 +81,7 @@ const Container = styled.section`
 
 const Top = styled.div`
     display: flex;
+    justify-content: space-between;
 `;
 
 function SnowflakeItem() {
@@ -115,7 +122,7 @@ function SnowflakeItem() {
                     onChange={handleChange}
                     onFocus={handleFocus}
                 />
-                <p className="comparison">-1293</p>
+                <p className="comparison">-0d 0h 0m 0s 0ms</p>
             </Top>
             <output>
                 <Time time="5/26/2021 7:58:20" timezone="PST" />
