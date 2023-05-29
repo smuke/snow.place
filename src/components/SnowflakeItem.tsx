@@ -85,8 +85,14 @@ const Top = styled.div`
     justify-content: space-between;
 `;
 
-function SnowflakeItem() {
-    const [snowflake, setSnowflake] = useState("");
+interface SnowflakeItemProps {
+    id: number;
+    snowflake: any;
+    setSnowflakes: Function;
+}
+
+function SnowflakeItem({ id, snowflake, setSnowflakes }: SnowflakeItemProps) {
+    const [input, setInput] = useState("");
     const [expanded, setExpanded] = useState(false);
 
     function handleChange(e: SyntheticEvent<HTMLInputElement>) {
@@ -96,7 +102,7 @@ function SnowflakeItem() {
 
         // Only allow numbers or empty input
         if (targetValue.match(/^([0-9])+$/) || targetValue === "") {
-            setSnowflake(targetValue);
+            setInput(targetValue);
 
             // Show output if input is longer than 5 characters
             if (targetValue.length > 5) {
@@ -105,6 +111,8 @@ function SnowflakeItem() {
                 setExpanded(false);
             }
         }
+
+        setSnowflakes(id, { difference: "-test", fastest: false });
     }
 
     // Select all "text" when input focused for easier pasting
@@ -119,7 +127,7 @@ function SnowflakeItem() {
                     type="text"
                     placeholder="Message ID"
                     autoComplete="off"
-                    value={snowflake}
+                    value={input}
                     onChange={handleChange}
                     onFocus={handleFocus}
                 />
