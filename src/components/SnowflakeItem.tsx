@@ -2,6 +2,7 @@ import { useState, SyntheticEvent, FocusEvent } from "react";
 import styled from "styled-components";
 
 import Time from "./Time";
+import Difference from "./Difference";
 
 const Container = styled.section`
     background: #1e2028;
@@ -122,7 +123,10 @@ function SnowflakeItem() {
                     onChange={handleChange}
                     onFocus={handleFocus}
                 />
-                <p className="comparison">-0d 0h 0m 0s 0ms</p>
+                <Difference
+                    difference={snowflake.difference}
+                    fastest={snowflake.fastest}
+                />
             </Top>
             <output>
                 <Time time="5/26/2021 7:58:20" timezone="PST" />
