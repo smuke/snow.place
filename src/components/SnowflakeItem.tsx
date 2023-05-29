@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Time from "./Time";
 import Difference from "./Difference";
 
+import Formatter from "../formatter";
+
 const Container = styled.section`
     background: #1e2028;
     width: 400px;
@@ -95,6 +97,8 @@ function SnowflakeItem({ id, snowflake, setSnowflakes }: SnowflakeItemProps) {
     const [input, setInput] = useState("");
     const [expanded, setExpanded] = useState(false);
 
+    const formatter = new Formatter(input);
+
     function handleChange(e: SyntheticEvent<HTMLInputElement>) {
         e.preventDefault();
 
@@ -137,8 +141,11 @@ function SnowflakeItem({ id, snowflake, setSnowflakes }: SnowflakeItemProps) {
                 />
             </Top>
             <output>
-                <Time time="5/26/2021 7:58:20" timezone="PST" />
-                <Time time="5/26/2021 10:58:20" timezone="EST" />
+                <Time
+                    time={formatter.local()}
+                    timezone={formatter.localTimeZone()}
+                />
+                <Time time={formatter.utc()} timezone="UTC" />
             </output>
         </Container>
     );
