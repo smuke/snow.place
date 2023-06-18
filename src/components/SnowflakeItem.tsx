@@ -9,7 +9,7 @@ import formatter from "../utils/formatter";
 const Container = styled.section`
     background: #1e2028;
     width: 400px;
-    margin: 10px 0;
+    margin-bottom: 7.5px;
     padding: 0 20px;
     border: 1px solid #2e313c;
     border-radius: 5px;
