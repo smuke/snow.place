@@ -5,6 +5,7 @@ class Formatter {
     constructor(snowflake: string) {
         const idint = BigInt.asUintN(64, BigInt(snowflake));
         const binarydate = Number(idint >> 22n);
+
         this.date = new Date(binarydate + discordEpoch);
     }
 
@@ -12,11 +13,11 @@ class Formatter {
         return (
             `${this.date.getMonth() + 1}/${this.date.getDate()}/${this.date.getFullYear()} ` +
             this.date.toLocaleString("en-US", {
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric",
 
-            hour12: true
+                hour12: true
             })
         )
     }
@@ -39,7 +40,6 @@ class Formatter {
             })
         )
     }
-
 }
 
 export default Formatter;
