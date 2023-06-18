@@ -1,10 +1,10 @@
 import { useState, SyntheticEvent, FocusEvent } from "react";
 import styled from "styled-components";
 
-import Time from "./Time";
 import Difference from "./Difference";
+import Time from "./Time";
 
-import Formatter from "../formatter";
+import formatter from "../utils/formatter";
 
 const Container = styled.section`
     background: #1e2028;
@@ -89,15 +89,21 @@ const Top = styled.div`
 
 interface SnowflakeItemProps {
     id: number;
-    snowflake: any;
-    setSnowflakes: Function;
+    snowflake: string;
+    difference: string;
+    fastest: boolean;
+    updateSnowflake: any;
 }
 
-function SnowflakeItem({ id, snowflake, setSnowflakes }: SnowflakeItemProps) {
-    const [input, setInput] = useState("");
+function SnowflakeItem({
+    id,
+    snowflake,
+    difference,
+    fastest,
+    updateSnowflake,
+}: SnowflakeItemProps) {
+    const [inputValue, setInputValue] = useState("");
     const [expanded, setExpanded] = useState(false);
-
-    const formatter = new Formatter(input);
 
     function handleChange(e: SyntheticEvent<HTMLInputElement>) {
         e.preventDefault();
@@ -106,7 +112,7 @@ function SnowflakeItem({ id, snowflake, setSnowflakes }: SnowflakeItemProps) {
 
         // Only allow numbers or empty input
         if (targetValue.match(/^([0-9])+$/) || targetValue === "") {
-            setInput(targetValue);
+            setInputValue(targetValue);
 
             // Show output if input is longer than 5 characters
             if (targetValue.length > 5) {
@@ -114,15 +120,17 @@ function SnowflakeItem({ id, snowflake, setSnowflakes }: SnowflakeItemProps) {
             } else {
                 setExpanded(false);
             }
-        }
 
-        setSnowflakes(id, { difference: "-test", fastest: false });
+            updateSnowflake(id, targetValue);
+        }
     }
 
     // Select all "text" when input focused for easier pasting
     function handleFocus(e: FocusEvent<HTMLInputElement>) {
         e.currentTarget.select();
     }
+
+    const Formatter = new formatter(inputValue);
 
     return (
         <Container className={expanded ? "expanded" : ""}>
@@ -131,21 +139,18 @@ function SnowflakeItem({ id, snowflake, setSnowflakes }: SnowflakeItemProps) {
                     type="text"
                     placeholder="Message ID"
                     autoComplete="off"
-                    value={input}
+                    value={snowflake}
                     onChange={handleChange}
                     onFocus={handleFocus}
                 />
-                <Difference
-                    difference={snowflake.difference}
-                    fastest={snowflake.fastest}
-                />
+                <Difference difference={difference} fastest={fastest} />
             </Top>
             <output>
                 <Time
-                    time={formatter.local()}
-                    timezone={formatter.localTimeZone()}
+                    time={Formatter.local()}
+                    timezone={Formatter.localTimeZone()}
                 />
-                <Time time={formatter.utc()} timezone="UTC" />
+                <Time time={Formatter.utc()} timezone="UTC" />
             </output>
         </Container>
     );

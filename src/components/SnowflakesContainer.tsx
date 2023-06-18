@@ -1,32 +1,34 @@
 import { useState } from "react";
 import SnowflakeItem from "./SnowflakeItem";
+import compare from "../utils/compare";
 
 function SnowflakesContainer() {
     const [snowflakes, setSnowflakes] = useState([
         {
-            difference: "-1m 23s",
-            fastest: true,
+            snowflake: "",
+            difference: "",
+            fastest: false,
         },
         {
-            difference: "+1m 23s",
+            snowflake: "",
+            difference: "",
+            fastest: false,
         },
     ]);
 
-    interface newItem {
-        difference: string;
-        fastest: boolean;
-    }
+    function updateSnowflake(id: number, snowflake: string) {
+        // Add new snowflake to an array pass into compare function
+        const newSnowflakes = compare([
+            ...snowflakes.slice(0, id),
+            {
+                snowflake,
+                difference: "",
+                fastest: false,
+            },
+            ...snowflakes.slice(id + 1),
+        ]);
 
-    // Update snowflakes with new item
-    // New item has difference and fastest
-    function handleSetSnowflakes(id: number, newItem: newItem) {
-        setSnowflakes((prevSnowflakes) => {
-            return [
-                ...prevSnowflakes.slice(0, id),
-                newItem,
-                ...prevSnowflakes.slice(id + 1),
-            ];
-        });
+        setSnowflakes(newSnowflakes);
     }
 
     return (
@@ -35,8 +37,10 @@ function SnowflakesContainer() {
                 <SnowflakeItem
                     key={index}
                     id={index}
-                    snowflake={snowflake}
-                    setSnowflakes={handleSetSnowflakes}
+                    snowflake={snowflake.snowflake}
+                    difference={snowflake.difference}
+                    fastest={snowflake.fastest}
+                    updateSnowflake={updateSnowflake}
                 />
             ))}
         </form>
