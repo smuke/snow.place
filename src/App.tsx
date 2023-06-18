@@ -4,17 +4,7 @@ import SnowflakeContainer from "./components/SnowflakesContainer";
 import Logo from "./components/Logo";
 
 const Header = styled.header`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-`;
-
-const Heading = styled.h1`
-    color: #8b94bb;
-    margin: 0;
-    padding: 0;
-    font: 400 1.1rem "Inter", sans-serif;
+    margin-bottom: 10px;
 `;
 
 function App() {
@@ -22,7 +12,6 @@ function App() {
         <>
             <Header>
                 <Logo />
-                <Heading>Compare Discord Timestamps</Heading>
             </Header>
             <SnowflakeContainer />
         </>
