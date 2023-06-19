@@ -1,8 +1,9 @@
-import { useState, SyntheticEvent, FocusEvent } from "react";
+import { useState, SyntheticEvent } from "react";
 import styled from "styled-components";
 
 import Difference from "./Difference";
 import Time from "./Time";
+import SnowflakeInput from "./SnowflakeInput";
 
 import formatter from "../utils/formatter";
 
@@ -15,34 +16,6 @@ const Container = styled.section`
     border-radius: 5px;
     position: relative;
     transition: 0.1s;
-    input {
-        background: none;
-        color: #8b94bb;
-        padding: 20px 0;
-        padding-right: 10px;
-        margin: 0;
-        width: auto;
-        border: none;
-        outline: none;
-        font: 500 1rem "Inter", sans-serif;
-        display: flex;
-        flex-grow: 1;
-        // Ellipsis
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        &::placeholder {
-            color: #8b94bb;
-            font: 500 1rem "Inter", sans-serif;
-        }
-        &:focus::placeholder {
-            color: transparent;
-        }
-        &::selection {
-            background: #8b94bb;
-            color: #1e2028;
-        }
-    }
     &:before {
         content: "";
         display: inline-block;
@@ -90,7 +63,7 @@ interface SnowflakeItemProps {
     snowflake: string;
     difference: string;
     fastest: boolean;
-    updateSnowflake: any;
+    updateSnowflake: (id: number, snowflake: string) => void;
 }
 
 function SnowflakeItem({
@@ -123,23 +96,14 @@ function SnowflakeItem({
         }
     }
 
-    // Select all "text" when input focused for easier pasting
-    function handleFocus(e: FocusEvent<HTMLInputElement>) {
-        e.currentTarget.select();
-    }
-
     const Formatter = new formatter(inputValue);
 
     return (
         <Container className={expanded ? "expanded" : ""}>
             <Top>
-                <input
-                    type="text"
-                    placeholder="Message ID"
-                    autoComplete="off"
-                    value={snowflake}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
+                <SnowflakeInput
+                    snowflake={snowflake}
+                    handleChange={handleChange}
                 />
                 <Difference difference={difference} fastest={fastest} />
             </Top>
