@@ -25,6 +25,12 @@ const Heading = styled.h1`
     font: 400 1.1rem "Inter", sans-serif;
 `;
 
+const Footer = styled.footer`
+    color: #8b94bb;
+    padding-top: 10px;
+    font: 400 1rem "Inter", sans-serif;
+`;
+
 function App() {
     return (
         <>
@@ -33,6 +39,7 @@ function App() {
                 <Heading>Compare Discord Timestamps</Heading>
             </Header>
             <SnowflakeContainer />
+            <Footer>snow.place</Footer>
         </>
     );
 }
