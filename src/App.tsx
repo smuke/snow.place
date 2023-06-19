@@ -29,7 +29,9 @@ function App() {
     return (
         <>
             <Header>
-                <Logo />
+                <a href="/">
+                    <Logo />
+                </a>
                 <Heading>Compare Discord Timestamps</Heading>
             </Header>
             <SnowflakeContainer />
