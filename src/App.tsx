@@ -8,6 +8,14 @@ const Header = styled.header`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    // Responsiveness
+    @media screen and (max-width: 470px) {
+        flex-direction: column;
+        align-items: flex-start;
+        h1 {
+            margin-top: 2.5px;
+        }
+    }
 `;
 
 const Heading = styled.h1`

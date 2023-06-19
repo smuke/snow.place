@@ -51,6 +51,16 @@ const Container = styled.section`
     &.expanded .comparison {
         display: block;
     }
+    // Responsiveness
+    @media screen and (max-width: 470px) {
+        width: 300px;
+    }
+    @media screen and (max-width: 350px) {
+        width: 250px;
+    }
+    @media screen and (max-width: 325px) {
+        width: 225px;
+    }
 `;
 
 const Top = styled.div`
