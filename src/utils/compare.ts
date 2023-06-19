@@ -45,6 +45,26 @@ function findFastest(snowflakes: Snowflake[]) {
     return { fastestSnowflakeIndex, secondFastestSnowflakeIndex };
 }
 
+function difference(date1: number, date2: number) {
+    const ms: any = Math.abs(date1 - date2);
+
+    const seconds = ms / 1000;
+    const minutes = seconds / 60;
+    const hours = minutes / 60;
+    const days = hours / 24;
+    const msexcess = Math.floor(ms % 1000);
+
+    const daysFormat = Math.floor(days) != 0 ? `${Math.floor(days)}d ` : "";
+    const hoursFormat = Math.floor(hours % 24) != 0 ? `${Math.floor(hours % 24)}h `: "";
+    const minutesFormat = Math.floor(minutes % 60) != 0 ? `${Math.floor(minutes % 60)}m `: "";
+    const secondsFormat = Math.floor(seconds % 60) != 0 ? `${Math.floor(seconds % 60)}s `: "";
+    const msFormat = `${msexcess}ms`;
+
+    let difference = daysFormat + hoursFormat + minutesFormat + secondsFormat + msFormat;
+
+    return difference;
+}
+
 function compare(snowflakes: Snowflake[]) {
     console.log("SNOWFLAKES: ", snowflakes);
 
@@ -52,35 +72,23 @@ function compare(snowflakes: Snowflake[]) {
 
     // Set differences
     for (let i = 0; i < snowflakes.length; i++) {
-        if (i == fastestSnowflakeIndex) {
-            snowflakes[i].difference = "Fastest";
-        }
-        else if (BigInt(snowflakes[i].snowflake) < 1420070400000) {
+        if (BigInt(snowflakes[i].snowflake) < 1420070400000) {
             break;
+        }
+        else if (i == fastestSnowflakeIndex) {
+            const date1 = (new formatter(snowflakes[fastestSnowflakeIndex].snowflake)).date.valueOf();
+            const date2 = (new formatter(snowflakes[secondFastestSnowflakeIndex].snowflake)).date.valueOf();
+    
+            snowflakes[i].difference = "-" + difference(date1, date2);
+        }
+        else if (i == secondFastestSnowflakeIndex) {
+            snowflakes[secondFastestSnowflakeIndex].difference = "";
         }
         else {
             const date1 = (new formatter(snowflakes[fastestSnowflakeIndex].snowflake)).date.valueOf();
             const date2 = (new formatter(snowflakes[i].snowflake)).date.valueOf();
     
-            console.log(date1, date2)
-    
-            const ms: any = Math.abs(date1 - date2);
-
-            const seconds = ms / 1000;
-            const minutes = seconds / 60;
-            const hours = minutes / 60;
-            const days = hours / 24;
-            const msexcess = Math.floor(ms % 1000);
-
-            const daysFormat = Math.floor(days) != 0 ? `${Math.floor(days)}d ` : "";
-            const hoursFormat = Math.floor(hours % 24) != 0 ? `${Math.floor(hours % 24)}h `: "";
-            const minutesFormat = Math.floor(minutes % 60) != 0 ? `${Math.floor(minutes % 60)}m `: "";
-            const secondsFormat = Math.floor(seconds % 60) != 0 ? `${Math.floor(seconds % 60)}s `: "";
-            const msFormat = `${msexcess}ms`;
-
-            let difference = "+" + daysFormat + hoursFormat + minutesFormat + secondsFormat + msFormat;
-    
-            snowflakes[i].difference = difference;
+            snowflakes[i].difference = "+" + difference(date1, date2);
         }
     }
 
