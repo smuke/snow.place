@@ -8,6 +8,12 @@ const Header = styled.header`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    .logo {
+        display: flex;
+        &:hover {
+            cursor: pointer;
+        }
+    }
     // Responsiveness
     @media screen and (max-width: 470px) {
         flex-direction: column;
@@ -35,7 +41,9 @@ function App() {
     return (
         <>
             <Header>
-                <Logo />
+                <div className="logo" onClick={() => window.location.reload()}>
+                    <Logo />
+                </div>
                 <Heading>Compare Discord Timestamps</Heading>
             </Header>
             <SnowflakeContainer />
