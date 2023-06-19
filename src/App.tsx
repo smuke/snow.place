@@ -9,6 +9,7 @@ const Header = styled.header`
     align-items: center;
     margin-bottom: 20px;
     .logo {
+        display: flex;
         &:hover {
             cursor: pointer;
         }
