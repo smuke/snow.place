@@ -79,6 +79,16 @@ function compare(snowflakes: Snowflake[]) {
             const date1 = (new formatter(snowflakes[fastestSnowflakeIndex].snowflake)).date.valueOf();
             const date2 = (new formatter(snowflakes[secondFastestSnowflakeIndex].snowflake)).date.valueOf();
     
+            // Don't show difference when other date is not valid
+            if (date1 <= 1420070400000) {
+                snowflakes[i].difference = "";
+                break;
+            }
+            if (date2 <= 1420070400000) {
+                snowflakes[i].difference = "";
+                break;
+            }
+
             snowflakes[i].difference = "-" + difference(date1, date2);
         }
         else if (i == secondFastestSnowflakeIndex) {
@@ -87,6 +97,16 @@ function compare(snowflakes: Snowflake[]) {
         else {
             const date1 = (new formatter(snowflakes[fastestSnowflakeIndex].snowflake)).date.valueOf();
             const date2 = (new formatter(snowflakes[i].snowflake)).date.valueOf();
+
+            // Don't show difference when other date is not valid
+            if (date1 <= 1420070400000) {
+                snowflakes[i].difference = "";
+                break;
+            }
+            if (date2 <= 1420070400000) {
+                snowflakes[i].difference = "";
+                break;
+            }
     
             snowflakes[i].difference = "+" + difference(date1, date2);
         }
