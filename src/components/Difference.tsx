@@ -8,7 +8,7 @@ const Container = styled.div`
     text-align: right;
 
     &.fastest {
-        color: #7feb7d;
+        color: #4bdc6b;
     }
 `;
 
