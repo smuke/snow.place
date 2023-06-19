@@ -54,7 +54,7 @@ const Container = styled.section`
         top: 15px;
         left: -2px;
         transform: translateX(0);
-        transition: 0.25s ease;
+        transition: 0.15s ease;
     }
     &:focus-within {
         &:before {
