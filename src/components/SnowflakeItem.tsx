@@ -19,6 +19,7 @@ const Container = styled.section`
         background: none;
         color: #8b94bb;
         padding: 20px 0;
+        padding-right: 10px;
         margin: 0;
         width: auto;
         border: none;
@@ -64,9 +65,6 @@ const Container = styled.section`
     &.expanded {
         padding: 0 20px 20px 20px;
         min-height: 100px;
-        input {
-            padding: 20px 0;
-        }
     }
     output {
         display: none;
