@@ -6,7 +6,7 @@
 
 # snow.place
 
-Compare Discord Snowflake Timestamps - Get time differences between messages with snow.place. Work in progress... but... \*working\*
+Compare Discord Snowflake Timestamps - Get time differences between messages with snow.place
 
 ## Getting Discord IDs
 
