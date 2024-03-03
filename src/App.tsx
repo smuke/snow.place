@@ -35,6 +35,14 @@ const Footer = styled.footer`
     color: #8b94bb;
     padding-top: 10px;
     font: 400 1rem "Inter", sans-serif;
+    a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            color: #c1c8e7;
+        }
+        transition: .25s ease-out;
+    }
 `;
 
 function App() {
@@ -47,7 +55,7 @@ function App() {
                 <Heading>Compare Discord Timestamps</Heading>
             </Header>
             <SnowflakeContainer />
-            <Footer>snow.place</Footer>
+            <Footer>snow.place - <a href="https://github.com/smuke/snow.place" target="_blank">open source</a></Footer>
         </>
     );
 }
