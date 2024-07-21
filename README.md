@@ -1,4 +1,4 @@
-![Discord message IDs and timestamps](https://github.com/user-attachments/assets/0ccd40ee-8bbe-4c17-a1b5-d3660508271c)
+![Discord message IDs and timestamps example](https://github.com/user-attachments/assets/4ad503f9-3276-4452-941b-9078e8f87a2d)
 
 # snow.place
 
